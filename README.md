@@ -17,5 +17,6 @@ Para mais informações sobre este projeto, entre em contato com qualquer um dos
 - Bruno S. Rosati.
 - Camila C. P. de Almeida.
 - Cristielen F. C. da Silva.
+- Gabriel I. D. Gomes.
 - Guilherme B. S. Guimarães.
 - Nicolas D. dos Santos.
