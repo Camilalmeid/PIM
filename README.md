@@ -1,6 +1,6 @@
 # UrbAgro Fazendas Urbanas - Sistema de Controle de Fornecedores e Produção 
 
-##🚀 Índice
+## 🚀 Índice
 1.Descrição do Projeto
 2.Status do Projeto
 3.Requisitos
@@ -11,7 +11,7 @@
 ## 📄Sobre o Projeto
 Este projeto visa desenvolver um sistema de controle abrangente para uma fazenda urbana, abordando os aspectos de gestão de fornecedores e produção de produtos. O sistema será projetado para otimizar as operações da fazenda, garantindo eficiência na gestão de recursos e maximizando a qualidade dos produtos oferecidos aos clientes.
 
-##🛠️Status do Projeto
+## 🛠️Status do Projeto
 Em desenvolvimento
 
 ## 📋Requisitos
