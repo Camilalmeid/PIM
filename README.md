@@ -1,12 +1,12 @@
 # UrbAgro Fazendas Urbanas - Sistema de Controle de Fornecedores e Produção 
 
 ## 🚀 Índice
-1.Descrição do Projeto
-2.Status do Projeto
-3.Requisitos
-4.Funcionalidades
-5.Tecnologias Utilizadas
-6.Pessoas Desenvolvedoras do Projeto
+- 1.Descrição do Projeto
+- 2.Status do Projeto
+- 3.Requisitos
+- 4.Funcionalidades
+- 5.Tecnologias Utilizadas
+- 6.Pessoas Desenvolvedoras do Projeto
 
 ## 📄Sobre o Projeto
 Este projeto está sendo desenvolvido pelos alunos do 2º e 3º semestre do curso de Análise e Desenvolvimento de Sistemas da Universidade Paulista e visa a criação de um sistema de controle abrangente para uma fazenda urbana, abordando os aspectos de gestão de fornecedores e produção de produtos. O sistema será projetado para otimizar as operações da fazenda, garantindo eficiência na gestão de recursos e maximizando a qualidade dos produtos oferecidos aos clientes.
@@ -42,27 +42,27 @@ Estimativa da Viabilidade.
 Descrever quais os recursos humanos serão utilizados
 
 ## ✅Funcionalidades
-Gerenciamento de fornecedores: Permitirá registrar informações sobre os fornecedores de insumos para a fazenda urbana.
-Controle de produção: Possibilitará o registro e monitoramento da produção de produtos agrícolas pela fazenda.
-Relatórios e análises: Oferecerá recursos para a geração de relatórios e análises sobre as operações da fazenda, incluindo dados de fornecedores e produção.
+- Gerenciamento de fornecedores: Permitirá registrar informações sobre os fornecedores de insumos para a fazenda urbana.
+- Controle de produção: Possibilitará o registro e monitoramento da produção de produtos agrícolas pela fazenda.
+- Relatórios e análises: Oferecerá recursos para a geração de relatórios e análises sobre as operações da fazenda, incluindo dados de fornecedores e produção.
 
 ## 💻Tecnologias Utilizadas
 
-Figma: Figma foi utilizado para o design e prototipagem da interface do usuário.
-Office 365: Office 365 foi utilizado para colaboração e comunicação durante o desenvolvimento do projeto.
-Astah UML: Astah UML foi utilizado para modelagem e desenho de diagramas UML para análise de requisitos.
-Visual Studio: Visual Studio foi utilizado como ambiente de desenvolvimento integrado (IDE) para escrever e depurar o código-fonte do projeto.
+- Figma: Figma foi utilizado para o design e prototipagem da interface do usuário.
+- Office 365: Office 365 foi utilizado para colaboração e comunicação durante o desenvolvimento do projeto.
+- Astah UML: Astah UML foi utilizado para modelagem e desenho de diagramas UML para análise de requisitos.
+- Visual Studio: Visual Studio foi utilizado como ambiente de desenvolvimento integrado (IDE) para escrever e depurar o código-fonte do projeto.
 
 ## ✒️Pessoas Desenvolvedoras do Projeto
 
 Para mais informações sobre este projeto, entre em contato com qualquer um dos participantes, sendo eles:
 
-Bruno S. Rosati.
-Camila C. P. de Almeida.
-Cristielen F. C. da Silva.
-Gabriel I. D. Gomes.
-Guilherme B. S. Guimarães.
-Nicolas D. dos Santos.
+- Bruno S. Rosati.
+- Camila C. P. de Almeida.
+- Cristielen F. C. da Silva.
+- Gabriel I. D. Gomes.
+- Guilherme B. S. Guimarães.
+- Nicolas D. dos Santos.
 
 
 
