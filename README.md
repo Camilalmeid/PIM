@@ -1,12 +1,12 @@
 # UrbAgro Fazendas Urbanas - Sistema de Controle de Fornecedores e Produção 
 
 ## 🚀 Índice
-- 1.Descrição do Projeto
-- 2.Status do Projeto
-- 3.Requisitos
-- 4.Funcionalidades
-- 5.Tecnologias Utilizadas
-- 6.Pessoas Desenvolvedoras do Projeto
+- 1. Descrição do Projeto
+- 2. Status do Projeto
+- 3. Requisitos
+- 4. Funcionalidades
+- 5. Tecnologias Utilizadas
+- 6. Pessoas Desenvolvedoras do Projeto
 
 ## 📄Sobre o Projeto
 Este projeto está sendo desenvolvido pelos alunos do 2º e 3º semestre do curso de Análise e Desenvolvimento de Sistemas da Universidade Paulista e visa a criação de um sistema de controle abrangente para uma fazenda urbana, abordando os aspectos de gestão de fornecedores e produção de produtos. O sistema será projetado para otimizar as operações da fazenda, garantindo eficiência na gestão de recursos e maximizando a qualidade dos produtos oferecidos aos clientes.
@@ -17,28 +17,28 @@ Em desenvolvimento
 
 ## 📋Requisitos
 
-1.Regra de Negócio 
+- 1. Regra de Negócio 
 O grupo deverá descrever a regra de negócio para que se possa entender como o sistema funciona.
 
-2.Análise de Sistemas Orientada a Objetos 
+- 2. Análise de Sistemas Orientada a Objetos 
 Diagramas UML. Caso de Uso, Classe, Sequência, implantação.
 
-3.Engenharia de Software II 
+- 3. Engenharia de Software II 
 Planilha de testes
 
-4.Programação Orientada a Objetos I 
+- 4. Programação Orientada a Objetos I 
 PoC (Proof of Concept – Prova de Conceito) em modo console que faça o CRUD (Creat - Criar - , Read – Ler, Update – Atualizar e Delete – Apagar).
 
-5.Projeto de Interface com o Usuário 
+- 5. Projeto de Interface com o Usuário 
 Projeto de Telas
 
-6.Banco de Dados 
+- 6. Banco de Dados 
 Diagrama ER Entidade – Relacionamento) e Scripts de carga de dados de Teste.
 
-7.Economia e Mercado 
+- 7. Economia e Mercado 
 Estimativa da Viabilidade.
 
-8.Gestão Estratégica de Recursos Humanos 
+- 8. Gestão Estratégica de Recursos Humanos 
 Descrever quais os recursos humanos serão utilizados
 
 ## ✅Funcionalidades
