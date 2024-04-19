@@ -9,7 +9,8 @@
 6.Pessoas Desenvolvedoras do Projeto
 
 ## 📄Sobre o Projeto
-Este projeto visa desenvolver um sistema de controle abrangente para uma fazenda urbana, abordando os aspectos de gestão de fornecedores e produção de produtos. O sistema será projetado para otimizar as operações da fazenda, garantindo eficiência na gestão de recursos e maximizando a qualidade dos produtos oferecidos aos clientes.
+Este projeto está sendo desenvolvido pelos alunos do 2º e 3º semestre do curso de Análise e Desenvolvimento de Sistemas da Universidade Paulista e visa a criação de um sistema de controle abrangente para uma fazenda urbana, abordando os aspectos de gestão de fornecedores e produção de produtos. O sistema será projetado para otimizar as operações da fazenda, garantindo eficiência na gestão de recursos e maximizando a qualidade dos produtos oferecidos aos clientes.
+
 
 ## 🛠️Status do Projeto
 Em desenvolvimento
