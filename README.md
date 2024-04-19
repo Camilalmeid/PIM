@@ -1,8 +1,8 @@
 # UrbAgro Fazendas Urbanas - Sistema de Controle de Fornecedores e Produção 
 
 ## 🚀 Índice
-- **1. Descrição do Projeto
-- **2. Status do Projeto
+- 1. Descrição do Projeto
+- 2. Status do Projeto
 - **3. Requisitos
 - **4. Funcionalidades
 - **5. Tecnologias Utilizadas
