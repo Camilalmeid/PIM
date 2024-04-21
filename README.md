@@ -45,6 +45,8 @@ Descrever quais os recursos humanos serão utilizados
 - Office 365: Office 365 foi utilizado para colaboração e comunicação durante o desenvolvimento do projeto.
 - Astah UML: Astah UML foi utilizado para modelagem e desenho de diagramas UML para análise de requisitos.
 - Visual Studio: Visual Studio foi utilizado como ambiente de desenvolvimento integrado (IDE) para escrever e depurar o código-fonte do projeto.
+- BR modelo: BR Modelo foi utilizado para a criação do diagrama de relacionamento.
+-  SQL server: SQL Server foi utilizado para criação estrutura do banco de dados
 
 ## ✒️Pessoas Desenvolvedoras do Projeto
 
