@@ -28,7 +28,7 @@ PoC (Proof of Concept – Prova de Conceito) em modo console que faça o CRUD (C
 - 5.Projeto de Interface com o Usuário 
 Projeto de Telas
 - 6.Banco de Dados 
-Diagrama ER Entidade – Relacionamento) e Scripts de carga de dados de Teste.
+(Diagrama ER Entidade – Relacionamento) e Scripts de carga de dados de Teste.
 - 7.Economia e Mercado 
 Estimativa da Viabilidade.
 - 8.Gestão Estratégica de Recursos Humanos 
@@ -36,6 +36,7 @@ Descrever quais os recursos humanos serão utilizados
 
 ## ✅Funcionalidades
 - Gerenciamento de fornecedores: Permitirá registrar informações sobre os fornecedores de insumos para a fazenda urbana.
+- Gerenciamento de pedidos: Permitirá gerenciar os pedidos realizados e o andamento individual da cada um.
 - Controle de produção: Possibilitará o registro e monitoramento da produção de produtos agrícolas pela fazenda.
 - Relatórios e análises: Oferecerá recursos para a geração de relatórios e análises sobre as operações da fazenda, incluindo dados de fornecedores e produção.
 
