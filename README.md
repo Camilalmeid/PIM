@@ -57,7 +57,7 @@ Para mais informações sobre este projeto, entre em contato com qualquer um dos
 - [Camila C. P. de Almeida](https://github.com/Camilalmeid)
 - [Cristielen F. C. da Silva](https://github.com/cristielen-cardoso)
 - [Gabriel I. D. Gomes](https://github.com/Gabrielzin77)
-- Guilherme B. S. Guimarães
+- [Guilherme B. S. Guimarães](https://github.com/GuilhermeBordinhon)
 - [Nicolas D. dos Santos](https://github.com/Nicklflameu21)
 
 
