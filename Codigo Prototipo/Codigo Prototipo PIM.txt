@@ -1,0 +1,337 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static List<Fornecedor> fornecedores = new List<Fornecedor>();
+    static List<Produto> produtos = new List<Produto>();
+
+    static void Main(string[] args)
+    {
+        bool continuar = true;
+
+        while (continuar)
+        {
+            MostrarMenu();
+            string opcao = Console.ReadLine();
+
+            switch (opcao)
+            {
+                case "1":
+                    AdicionarFornecedor();
+                    break;
+                case "2":
+                    ListarFornecedores();
+                    break;
+                case "3":
+                    AdicionarProduto();
+                    break;
+                case "4":
+                    ListarProdutos();
+                    break;
+                case "5":
+                    AtualizarProduto();
+                    break;
+                case "6":
+                    AtualizarPrecoProduto();
+                    break;
+                case "7":
+                    DeletarProduto();
+                    break;
+                case "8":
+                    AtualizarFornecedor();
+                    break;
+                case "9":
+                    InativarFornecedor();
+                    break;
+                case "10":
+                    ListarProdutosEmEstoque();
+                    break;
+                case "11":
+                    VoltarMenuPrincipal();
+                    break;
+                case "12":
+                    continuar = false;
+                    break;
+                default:
+                    Console.WriteLine("Opção inválida!");
+                    break;
+            }
+        }
+    }
+
+    static void MostrarMenu()
+    {
+        Console.WriteLine("Bem-vindo ao sistema de gerenciamento da Urbagro");
+        Console.WriteLine("=================================================");
+        Console.WriteLine("1. Adicionar fornecedor");
+        Console.WriteLine("2. Listar fornecedores");
+        Console.WriteLine("3. Adicionar produto");
+        Console.WriteLine("4. Listar produtos");
+        Console.WriteLine("5. Atualizar nome do produto");
+        Console.WriteLine("6. Atualizar preço do produto");
+        Console.WriteLine("7. Deletar produto");
+        Console.WriteLine("8. Atualizar fornecedor");
+        Console.WriteLine("9. Inativar fornecedor");
+        Console.WriteLine("10. Listar produtos em estoque");
+        Console.WriteLine("11. Voltar ao menu principal");
+        Console.WriteLine("12. Sair");
+        Console.Write("Escolha uma opção: ");
+    }
+
+    static void AdicionarFornecedor()
+    {
+        Console.Write("Nome do fornecedor: ");
+        string nome = Console.ReadLine();
+
+        Console.Write("Código do fornecedor: ");
+        int codigo;
+        while (!int.TryParse(Console.ReadLine(), out codigo) || codigo < 0)
+        {
+            Console.WriteLine("Código de fornecedor inválido!");
+            Console.Write("Código do fornecedor: ");
+        }
+
+        fornecedores.Add(new Fornecedor(nome, codigo));
+        Console.WriteLine("Fornecedor adicionado com sucesso!");
+    }
+
+    static void ListarFornecedores()
+    {
+        if (fornecedores.Count == 0)
+        {
+            Console.WriteLine("Nenhum fornecedor cadastrado.");
+            return;
+        }
+
+        Console.WriteLine("Lista de fornecedores:");
+        foreach (var fornecedor in fornecedores)
+        {
+            Console.WriteLine($"Nome: {fornecedor.Nome} - Código: {fornecedor.Codigo}" + (fornecedor.Ativo ? "" : " (Inativo)"));
+        }
+    }
+
+    static void AdicionarProduto()
+    {
+        if (fornecedores.Count == 0)
+        {
+            Console.WriteLine("Nenhum fornecedor cadastrado. Por favor, adicione um fornecedor primeiro.");
+            return;
+        }
+
+        Console.Write("Nome do produto: ");
+        string nome = Console.ReadLine();
+
+        Console.Write("Preço do produto: ");
+        decimal preco;
+        while (!decimal.TryParse(Console.ReadLine(), out preco) || preco < 0)
+        {
+            Console.WriteLine("Preço inválido. Por favor, insira um valor numérico positivo.");
+            Console.Write("Preço do produto: ");
+        }
+
+        Console.Write("Quantidade em estoque: ");
+        int quantidadeEmEstoque;
+        while (!int.TryParse(Console.ReadLine(), out quantidadeEmEstoque) || quantidadeEmEstoque < 0)
+        {
+            Console.WriteLine("Quantidade inválida. Por favor, insira um valor numérico inteiro positivo.");
+            Console.Write("Quantidade em estoque: ");
+        }
+
+        int codigoFornecedor;
+        Fornecedor fornecedor;
+        do
+        {
+            Console.Write("Código do fornecedor: ");
+            if (!int.TryParse(Console.ReadLine(), out codigoFornecedor) || codigoFornecedor < 0)
+            {
+                Console.WriteLine("Código de fornecedor inválido!");
+                Console.WriteLine("Pressione Enter para retornar ao menu principal...");
+                Console.ReadLine(); // Aguarda a entrada do usuário para continuar
+                return; // Retorna ao menu principal
+            }
+
+            fornecedor = fornecedores.Find(f => f.Codigo == codigoFornecedor);
+            if (fornecedor == null)
+            {
+                Console.WriteLine("Fornecedor não encontrado. Por favor, insira um código válido.");
+            }
+        } while (fornecedor == null || !fornecedor.Ativo);
+
+        Produto produto = new Produto(nome, preco, fornecedor, quantidadeEmEstoque);
+        produtos.Add(produto);
+
+        Console.WriteLine("Produto adicionado com sucesso!");
+    }
+
+    static bool FornecedorExiste(int codigo)
+    {
+        return fornecedores.Exists(f => f.Codigo == codigo && f.Ativo);
+    }
+
+    static void ListarProdutos()
+    {
+        if (produtos.Count == 0)
+        {
+            Console.WriteLine("Nenhum produto cadastrado.");
+            return;
+        }
+
+        Console.WriteLine("Lista de produtos:");
+        foreach (var produto in produtos)
+        {
+            Console.WriteLine($"Nome: {produto.Nome} - Preço: R$ {produto.Preco:F2} - Fornecedor: {produto.Fornecedor.Nome} - Quantidade em estoque: {produto.QuantidadeEmEstoque}");
+        }
+    }
+
+    static void AtualizarProduto()
+    {
+        Console.Write("Digite o número do produto que deseja atualizar: ");
+        int numeroProduto;
+        while (!int.TryParse(Console.ReadLine(), out numeroProduto) || numeroProduto < 1 || numeroProduto > produtos.Count)
+        {
+            Console.WriteLine("Número de produto inválido!");
+            Console.Write("Digite o número do produto que deseja atualizar: ");
+        }
+
+        Produto produtoSelecionado = produtos[numeroProduto - 1];
+
+        Console.WriteLine($"Atualizando produto: {produtoSelecionado.Nome}");
+        Console.Write("Novo nome do produto: ");
+        string novoNome = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(novoNome))
+            produtoSelecionado.Nome = novoNome;
+
+        Console.WriteLine("Produto atualizado com sucesso!");
+    }
+
+    static void AtualizarPrecoProduto()
+    {
+        Console.Write("Digite o número do produto que deseja atualizar o preço: ");
+        int numeroProduto;
+        while (!int.TryParse(Console.ReadLine(), out numeroProduto) || numeroProduto < 1 || numeroProduto > produtos.Count)
+        {
+            Console.WriteLine("Número de produto inválido!");
+            Console.Write("Digite o número do produto que deseja atualizar o preço: ");
+        }
+
+        Produto produtoSelecionado = produtos[numeroProduto - 1];
+
+        Console.WriteLine($"Atualizando preço do produto: {produtoSelecionado.Nome}");
+        Console.Write("Novo preço do produto: ");
+        decimal novoPreco;
+        while (!decimal.TryParse(Console.ReadLine(), out novoPreco) || novoPreco < 0)
+        {
+            Console.WriteLine("Preço inválido. Por favor, insira um valor numérico positivo.");
+            Console.Write("Novo preço do produto: ");
+        }
+        produtoSelecionado.Preco = novoPreco;
+
+        Console.WriteLine("Preço do produto atualizado com sucesso!");
+    }
+
+    static void DeletarProduto()
+    {
+        Console.Write("Digite o número do produto que deseja deletar: ");
+        int numeroProduto;
+        while (!int.TryParse(Console.ReadLine(), out numeroProduto) || numeroProduto < 1 || numeroProduto > produtos.Count)
+        {
+            Console.WriteLine("Número de produto inválido!");
+            Console.Write("Digite o número do produto que deseja deletar: ");
+        }
+
+        Produto produtoSelecionado = produtos[numeroProduto - 1];
+        produtos.Remove(produtoSelecionado);
+
+        Console.WriteLine("Produto deletado com sucesso!");
+    }
+
+    static void AtualizarFornecedor()
+    {
+        Console.Write("Digite o código do fornecedor que deseja atualizar: ");
+        int codigoFornecedor;
+        while (!int.TryParse(Console.ReadLine(), out codigoFornecedor) || codigoFornecedor < 0 || !FornecedorExiste(codigoFornecedor))
+        {
+            Console.WriteLine("Código de fornecedor inválido!");
+            Console.Write("Digite o código do fornecedor que deseja atualizar: ");
+        }
+
+        Fornecedor fornecedorSelecionado = fornecedores.Find(f => f.Codigo == codigoFornecedor);
+
+        Console.WriteLine($"Atualizando fornecedor: {fornecedorSelecionado.Nome}");
+        Console.Write("Novo nome do fornecedor: ");
+        string novoNome = Console.ReadLine();
+        if (!string.IsNullOrWhiteSpace(novoNome))
+            fornecedorSelecionado.Nome = novoNome;
+
+        Console.WriteLine("Fornecedor atualizado com sucesso!");
+    }
+
+    static void InativarFornecedor()
+    {
+        Console.Write("Digite o código do fornecedor que deseja inativar: ");
+        int codigoFornecedor;
+        while (!int.TryParse(Console.ReadLine(), out codigoFornecedor) || codigoFornecedor < 0 || !FornecedorExiste(codigoFornecedor))
+        {
+            Console.WriteLine("Código de fornecedor inválido!");
+            Console.Write("Digite o código do fornecedor que deseja inativar: ");
+        }
+
+        Fornecedor fornecedorSelecionado = fornecedores.Find(f => f.Codigo == codigoFornecedor);
+        fornecedorSelecionado.Ativo = false;
+
+        Console.WriteLine("Fornecedor inativado com sucesso!");
+    }
+
+    static void ListarProdutosEmEstoque()
+    {
+        var produtosEmEstoque = produtos.Where(p => p.QuantidadeEmEstoque > 0);
+
+        if (!produtosEmEstoque.Any())
+        {
+            Console.WriteLine("Nenhum produto em estoque.");
+            return;
+        }
+
+        Console.WriteLine("Produtos em estoque:");
+        foreach (var produto in produtosEmEstoque)
+        {
+            Console.WriteLine($"Nome: {produto.Nome} - Preço: R$ {produto.Preco:F2} - Fornecedor: {produto.Fornecedor.Nome} - Quantidade em estoque: {produto.QuantidadeEmEstoque}");
+        }
+    }
+
+    static void VoltarMenuPrincipal()
+    {
+        Console.WriteLine("Voltando ao menu principal...");
+    }
+}
+
+class Fornecedor
+{
+    public string Nome { get; set; }
+    public int Codigo { get; }
+    public bool Ativo { get; set; } = true;
+
+    public Fornecedor(string nome, int codigo)
+    {
+        Nome = nome;
+        Codigo = codigo;
+    }
+}
+
+class Produto
+{
+    public string Nome { get; set; }
+    public decimal Preco { get; set; }
+    public Fornecedor Fornecedor { get; }
+    public int QuantidadeEmEstoque { get; set; }
+
+    public Produto(string nome, decimal preco, Fornecedor fornecedor, int quantidadeEmEstoque)
+    {
+        Nome = nome;
+        Preco = preco;
+        Fornecedor = fornecedor;
+        QuantidadeEmEstoque = quantidadeEmEstoque;
+    }
+}
